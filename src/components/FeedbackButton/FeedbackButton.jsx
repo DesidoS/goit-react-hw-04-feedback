@@ -3,10 +3,9 @@ import { TbCoffee } from 'react-icons/tb';
 import { Button, ButtonContainer, Icon } from './FeedbackButton.styled';
 
 const FeedbackButton = ({ onLeaveFeedback, options }) => {
-  const buttons = Object.keys(options);
   return (
     <ButtonContainer>
-      {buttons.map(btn => (
+      {options.map(btn => (
         <Button
           key={btn}
           type="button"
@@ -27,6 +26,6 @@ const FeedbackButton = ({ onLeaveFeedback, options }) => {
 export default FeedbackButton;
 
 FeedbackButton.propTypes = {
-  options: PropTypes.object.isRequired,
-  onClick: PropTypes.func.isRequired,
+  options: PropTypes.array.isRequired,
+  onLeaveFeedback: PropTypes.func.isRequired,
 };
